@@ -1,33 +1,37 @@
 const express = require('express')
 const app = express()
+const port = 3000;
 
 // respond with "hello world" when a GET request is made to the homepage
-app.get('/Signup', (req, res) => {
-  res.send('hello world')
+app.get('/User/Signup', function(req, res){
+  res.json({
+    message : "Singhup Endpoint "
+  })
 })
 
-
-
-app.get('/Login', (req, res) => {
-    res.send('')
+app.get('/User/Signin', function(req, res){
+    res.json({
+      message : "Singin Endpoint "
+    })
   })
-
-
-
-  app.get('/Purchase', (req, res) => {
-    res.send('hello world')
+  
+  app.get('/User/Purchase', function(req, res){
+    res.json({
+      message : "Singhup Endpoint "
+    })
   })
+  
 
 
-
-  app.get('/Purchased Courses ', (req, res) => {
-    res.send('hello world')
+  app.get('/Courses', function(req, res){
+    res.json({
+      message : "Singhup Endpoint "
+    })
   })
+  
 
 
 
-  app.get('/', (req, res) => {
-    res.send('hello world')
-  })
-
-app.listen(3000);
+app.listen(port,()=>{
+    console.log('App Listening port ${port}')
+});
